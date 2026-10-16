@@ -1,0 +1,10 @@
+[package]
+name = "message-receiver"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+shared.workspace = true
+aws.workspace = true
+tokio.workspace = true
+serde_json.workspace = true
