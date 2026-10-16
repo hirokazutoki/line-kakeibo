@@ -10,6 +10,12 @@ pub struct InputQueueMessage {
     pub message_id: String,
 }
 
+/// 画像解析結果（仮のモック定義）
+#[derive(Debug, Serialize, Deserialize)]
+pub struct AnalysisResult {
+    pub text: String,
+}
+
 /// Response Queueに投入されるメッセージ
 /// - Text : テキストメッセージ
 /// - AnalysisResult : 画像解析の結果

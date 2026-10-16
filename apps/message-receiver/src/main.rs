@@ -1,8 +1,24 @@
 use shared::{InputQueueMessage, ResponseQueueMessage, EventMessage};
 
-fn main(webhook_event_id: String, message: EventMessage) {
+fn main() {
+    // 仮の呼び出し例
+    let webhook_event_id = String::new();
+    let user_id = String::new();
+    let reply_token = String::new();
+    let message = EventMessage::Text { text: String::new() };
 
-    // 送信処理
+    if let Err(e) = handle_event(webhook_event_id, user_id, reply_token, message) {
+        eprintln!("handle_event failed: {e}");
+    }
+}
+
+/// 送信処理
+fn handle_event(
+    webhook_event_id: String,
+    user_id: String,
+    reply_token: String,
+    message: EventMessage,
+) -> Result<(), Box<dyn std::error::Error>> {
     match message {
         EventMessage::Text { text, .. } => {
             // テキストはResponse Queueへ送信する
@@ -29,4 +45,6 @@ fn main(webhook_event_id: String, message: EventMessage) {
             // Input Queueへbodyを送信する処理
         }
     }
+
+    Ok(())
 }
