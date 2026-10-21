@@ -6,7 +6,7 @@ members = [
     "apps/response-service",
     "crates/aws",
     "crates/shared",
-    "crates/external-api",
+    "crates/external_api",
 ]
 
 # 全クレートで共有するパッケージ設定
